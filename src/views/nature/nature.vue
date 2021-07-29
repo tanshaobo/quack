@@ -9,12 +9,13 @@
         <el-aside>
           <el-menu
             router
-            :default-active='activePath'
+            :default-active="activePath"
             class="el-menu-vertical-demo"
-            @select="handleSelect">
-            <el-menu-item v-for="(item,index) in menuList" :key="index" :index="item.path">
+            @select="handleSelect"
+          >
+            <el-menu-item v-for="(item, index) in menuList" :key="index" :index="item.path">
               <i class="el-icon-menu"></i>
-              <span slot="title">{{item.title}}</span>
+              <span slot="title">{{ item.title }}</span>
             </el-menu-item>
           </el-menu>
         </el-aside>
@@ -27,28 +28,28 @@
 </template>
 
 <script>
-  export default{
-    name:'nature',
-    data(){
-        return{
-          menuList:[
-            {id:1, name:'class', title:'卦石分类',path:'/Nature/Class'},
-            {id:2, name:'attr', title:'卦石属性',path:'/Nature/Attr'},
-            {id:3, name:'cost', title:'进化费用',path:'/Nature/Computed'}
-          ],
-          activePath:'/Nature/Class',
-        }
+export default {
+  name: 'nature',
+  data() {
+    return {
+      menuList: [
+        { id: 1, name: 'class', title: '卦石分类', path: '/Nature/Class' },
+        { id: 2, name: 'attr', title: '卦石属性', path: '/Nature/Attr' },
+        { id: 3, name: 'cost', title: '进化费用', path: '/Nature/Computed' }
+      ],
+      activePath: '/Nature/Class'
+    }
+  },
+  components: {},
+  methods: {
+    goback() {
+      this.$router.push('/')
     },
-    components:{},
-    methods:{
-      goback(){
-        this.$router.push('/')
-      },
-      handleSelect(index){
-        console.log(index)
-      }
+    handleSelect(index) {
+      console.log(index)
     }
   }
+}
 </script>
 
 <style lang="stylus">

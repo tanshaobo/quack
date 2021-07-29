@@ -13,30 +13,27 @@
 </template>
 
 <script>
-
 export default {
   name: 'Home',
   components: {},
-  data(){
-    return {
-
-    }
+  data() {
+    return {}
   },
-  methods:{
-    goSpend(){
+  methods: {
+    goSpend() {
       this.$router.push({
-        name:'Spend'
+        name: 'Spend'
       })
     },
-    goNature(){
+    goNature() {
       this.$router.push({
-        name:'Nature'
+        name: 'Nature'
       })
     }
   }
 }
 </script>
 <style lang="stylus">
-  .home
-    width 100%
+.home
+  width 100%
 </style>
