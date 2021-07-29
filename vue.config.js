@@ -1,7 +1,7 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  publicPath: '/', // 项目默认根路径
+  publicPath: './', // 项目默认根路径
   outputDir: 'dist', // 打包输出目录
   assetsDir: '', // 打包静态资源目录
   indexPath: 'index.html', // 指定生成的index.html的目录
