@@ -1,6 +1,6 @@
 ## VueCliModel
 ### 一、说明
-保留一份常用的vue项目搭建模板
+访问地址  https://tanshaobo.github.io/quack/
 ### 二、预装库和插件
 ```
 vue
