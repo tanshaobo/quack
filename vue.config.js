@@ -2,7 +2,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   publicPath: './', // 项目默认根路径
-  outputDir: 'dist', // 打包输出目录
+  outputDir: 'docs', // 打包输出目录
   assetsDir: '', // 打包静态资源目录
   indexPath: 'index.html', // 指定生成的index.html的目录
   filenameHashing: false, // 静态资源文件名称是否开启hash 当vueCli无法生成index.html时，可设置false关闭文件名hash
