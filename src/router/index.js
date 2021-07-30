@@ -1,19 +1,35 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import SubMenu from '@/components/common/subMenu/index.vue'
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
     path: '/',
-    redirect: '/Home',
-    name: Home
+    redirect: '/Home'
   },
   {
-    path: '/Home',
-    name: 'Home',
-    component: Home
+    path: '/Nature',
+    name: 'Nature',
+    component: Home,
+    meta: '卦石',
+    children: [
+      {
+        path: '/Class',
+        name: 'Class',
+        component: SubMenu,
+        meta: '分类',
+        children: [
+          {
+            path: '',
+            name: 'Class',
+            component: () => import('../views/nature/class'),
+            meta: '详情'
+          }
+        ]
+      }
+    ]
   },
   {
     path: '/about',
