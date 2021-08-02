@@ -50,6 +50,7 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     next(vm => {
+      console.log(to)
       vm.setSubMenu(to)
     })
   },
@@ -59,14 +60,12 @@ export default {
   methods: {
     // 初始化
     init() {
-      console.log(routes)
       this.menuList = routes
         .find(i => i.path != '/')
         .children.map(i => {
           delete i.children
           return i
         })
-      console.log(this.menuList)
     },
     // 激活一级菜单
     toggleMenu() {},
