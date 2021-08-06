@@ -13,7 +13,7 @@
           </el-menu-item>
         </el-menu>
       </el-header>
-      <ul>
+      <!-- <ul>
         <li v-for="(item, index) in submenuData" :key="index" @click="toggleSubMenu(item.name)">
           {{ item.title }}
         </li>
@@ -22,7 +22,7 @@
         <el-button type="primary" size="medium" @click="goNature">卦石</el-button>
         <el-button type="primary" size="medium" @click="goSpend">元宝花费</el-button>
         <router-view :key="$route.path"></router-view>
-      </el-main>
+      </el-main> -->
     </el-container>
   </div>
 </template>
@@ -55,17 +55,12 @@ export default {
     })
   },
   beforeRouteUpdate(to) {
-    this.setSubMenu(to)
+    // this.setSubMenu(to)
   },
   methods: {
     // 初始化
     init() {
-      this.menuList = routes
-        .find(i => i.path != '/')
-        .children.map(i => {
-          delete i.children
-          return i
-        })
+      this.menuList = routes.filter(i => i.path != '/')
     },
     // 激活一级菜单
     toggleMenu() {},
@@ -75,9 +70,11 @@ export default {
     },
     // 设置二级菜单
     setSubMenu(m) {
+      console.log(m)
       const { matched } = m ? m : this.currentRoute
       // 确定一级菜单和二级菜单
       this.activeIndex = matched[0].path
+      return
       this.toggleNav(matched[0].path)
       // 二级菜单高亮
       if (matched[1]) {

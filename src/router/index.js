@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import SubMenu from '@/components/common/subMenu/index.vue'
 Vue.use(VueRouter)
 
 export const routes = [
@@ -15,26 +14,28 @@ export const routes = [
     component: Home,
     meta: '卦石',
     children: [
-      {
-        path: '/Class',
-        name: 'Class',
-        component: SubMenu,
-        meta: '分类'
-        // children: [
-        //   {
-        //     path: '',
-        //     name: 'Class',
-        //     component: () => import('../views/nature/class'),
-        //     meta: '详情'
-        //   }
-        // ]
-      }
+      // {
+      //   path: '',
+      //   name: 'Class',
+      //   component: () => import('../views/nature/nature'),
+      //   meta: '分类',
+      //   children: [
+      //     // {
+      //     //   path: '',
+      //     //   name: 'Class',
+      //     //   component: () => import('../views/nature/class'),
+      //     //   meta: '详情'
+      //     // }
+      //   ]
+      // }
     ]
   },
   {
     path: '/Spend',
     name: 'Spend',
-    component: () => import('../views/spend/spend')
+    component: () => import('../views/spend/spend'),
+    meta: '花费',
+    children: []
   }
   // {
   //   path: '/Nature',
