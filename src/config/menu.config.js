@@ -1,4 +1,14 @@
-export const NatureConfig = [
+const MainMenuConfig = [
+  {
+    title: '卦石',
+    path: '/Nature'
+  },
+  {
+    title: '花费',
+    path: '/Speed'
+  }
+]
+const NatureConfig = [
   {
     title: '类别',
     isDisabled: false,
@@ -16,4 +26,16 @@ export const NatureConfig = [
   }
 ]
 
-export const SpendConfig = [{}]
+const SpendConfig = [
+  {
+    title: '花费',
+    isDisabled: false,
+    name: 'Speed'
+  }
+]
+
+export default {
+  MainMenuConfig,
+  NatureConfig,
+  SpendConfig
+}

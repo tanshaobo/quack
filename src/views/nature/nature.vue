@@ -1,28 +1,22 @@
 <template>
   <div class="nature">
     <el-container>
-      <el-header>
-        <h2>卦石</h2>
-        <el-button size="medium" type="primary" @click="goback">返回</el-button>
-      </el-header>
-      <el-container>
-        <el-aside>
-          <el-menu
-            router
-            :default-active="activePath"
-            class="el-menu-vertical-demo"
-            @select="handleSelect"
-          >
-            <el-menu-item v-for="(item, index) in menuList" :key="index" :index="item.path">
-              <i class="el-icon-menu"></i>
-              <span slot="title">{{ item.title }}</span>
-            </el-menu-item>
-          </el-menu>
-        </el-aside>
-        <el-main>
-          <router-view></router-view>
-        </el-main>
-      </el-container>
+      <el-aside>
+        <el-menu
+          router
+          :default-active="activePath"
+          class="el-menu-vertical-demo"
+          @select="handleSelect"
+        >
+          <el-menu-item v-for="(item, index) in menuList" :key="index" :index="item.path">
+            <i class="el-icon-menu"></i>
+            <span slot="title">{{ item.title }}</span>
+          </el-menu-item>
+        </el-menu>
+      </el-aside>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </div>
 </template>
