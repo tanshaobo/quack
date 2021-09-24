@@ -1,11 +1,13 @@
 const MainMenuConfig = [
   {
     title: '卦石',
-    path: '/Nature'
+    path: '/Nature',
+    name: 'Nature'
   },
   {
     title: '花费',
-    path: '/Speed'
+    path: '/Speed',
+    name: 'Speed'
   }
 ]
 const NatureConfig = [

@@ -11,7 +11,7 @@ module.exports = {
     // 服务设置
     compress: true, // 对所有服务开启gzip压缩
     open: true, // 自动开启浏览器
-    hot: true, // 不支持热更新时自动刷新页面
+    hot: false, // 不支持热更新时自动刷新页面
     hotOnly: true, // 不支持热更新时不刷新页面 在控制台输出更新失败
     clientLogLevel: 'warning', // 控制台输出eslint检测
     host: 'localhost', // 主机

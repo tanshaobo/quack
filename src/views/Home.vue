@@ -1,34 +1,12 @@
 <template>
   <div class="home">
     <el-container>
-      <TsHeader />
-      <el-header>
-        <el-menu :default-active="activeIndex" mode="horizontal" router>
-          <el-menu-item
-            v-for="(item, index) in menuList"
-            :key="index"
-            :index="item.path"
-            @click="toggleMenu"
-          >
-            {{ item.meta }}
-          </el-menu-item>
-        </el-menu>
-      </el-header>
-      <ul class="sub-menu-list">
-        <li
-          v-for="(item, index) in submenuData"
-          :key="index"
-          class="sub-menu-item"
-          :class="index === subAcitveIndex ? 'sub-menu-item--active' : ''"
-          @click="toggleSubMenu(item.name)"
-        >
-          {{ item.title }}
-        </li>
-      </ul>
+      <TsHeader @getMenuRouter="getMenuRouter" ref="TsHeader" />
+      <TsSubMenu :submenuData="submenuData" ref="TsSubMenu" />
       <el-main>
-        <!-- <el-button type="primary" size="medium" @click="goNature">卦石</el-button> -->
-        <!-- <el-button type="primary" size="medium" @click="goSpend">元宝花费</el-button> -->
-        <router-view key="Attr" />
+        <el-scrollbar :style="mainSize">
+          <router-view key="Attr" />
+        </el-scrollbar>
       </el-main>
     </el-container>
   </div>
@@ -36,33 +14,50 @@
 
 <script>
 import TsHeader from '@/components/layout/TsHeader.vue'
+import TsSubMenu from '@/components/layout/TsSubMenu.vue'
 import { routes } from '@/router/index.js'
 import subMenuConfig from '@/config/menu.config.js'
 export default {
   name: 'Home',
   components: {
-    TsHeader
+    TsHeader,
+    TsSubMenu
   },
   data() {
     return {
       // 当前一级菜单
       activeIndex: '/Nature',
-      // 一级菜单列表
-      menuList: [],
       // 当前二级菜单
       subAcitveIndex: '',
       // 二级菜单列表
-      submenuData: []
+      submenuData: [],
+      mainSize: {
+        width: `0px`,
+        height: `0px`
+      }
     }
   },
   created() {
     this.init()
   },
-  beforeRouteEnter(to, from, next) {
-    next(vm => {
-      vm.setSubMenu(to)
+  mounted() {
+    this.$nextTick(() => {
+      const screenHeight = document.body.clientHeight
+      const screenWidth = document.body.clientWidth
+      const TsHeaderHeight = this.$refs.TsHeader.$el.clientHeight
+      const TsSubMenuHeight = this.$refs.TsSubMenu.$el.clientHeight
+      console.log(screenHeight, screenWidth)
+      this.mainSize = {
+        width: `${screenWidth - 40}px`,
+        height: `${screenHeight - TsHeaderHeight - TsSubMenuHeight - 40}px`
+      }
     })
   },
+  // beforeRouteEnter(to, from, next) {
+  //   next(vm => {
+  //     // vm.setSubMenu(to)
+  //   })
+  // },
   beforeRouteUpdate(to) {
     console.dir(to, 'beforeRouteUpdate')
     // this.setSubMenu(to)
@@ -72,9 +67,10 @@ export default {
     init() {
       this.menuList = routes.filter(i => i.path != '/')
     },
-    // 激活一级菜单
-    toggleMenu(k) {
+    // 获取一级菜单
+    getMenuRouter(k) {
       console.log(k)
+      this.activeIndex = k
     },
     // 激活二级菜单
     toggleSubMenu(item) {
@@ -113,9 +109,11 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .home
   width 100%
+  .el-container
+    flex-direction column
   .el-menu
 
   .sub-menu-list
@@ -133,4 +131,10 @@ export default {
     cursor pointer
   .sub-menu-item--active
     background rgba(25,134,231, .2)
+  .el-scrollbar
+    height calc(100vh - 150px)
+    width calc(100vw - 40px)
+    /deep/ .el-scrollbar__wrap
+      overflow-x hidden
+      overflow-y scroll
 </style>

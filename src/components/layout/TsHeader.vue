@@ -1,7 +1,7 @@
 <template>
   <section class="ts-header">
     <section class="ts-header__menu">
-      <el-menu :default-active="activeIndex" mode="horizontal" @select="getActive">
+      <el-menu :default-active="activeIndex" mode="horizontal" router @select="toggleMenu">
         <el-menu-item v-for="(item, index) in menuData" :key="index" :index="item.path">
           {{ item.title }}
         </el-menu-item>
@@ -19,14 +19,18 @@ export default {
       activeIndex: ''
     }
   },
+  created() {
+    this.activeIndex = `/${this.menuData[0].name}`
+  },
   computed: {
     menuData: () => {
       return MenuConfig.MainMenuConfig
     }
   },
+
   methods: {
-    getActive(index) {
-      console.log(index)
+    toggleMenu(v) {
+      this.$emit('getMenuRouter', v)
     }
   }
 }
