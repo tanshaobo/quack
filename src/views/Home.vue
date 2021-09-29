@@ -46,7 +46,6 @@ export default {
       const screenWidth = document.body.clientWidth
       const TsHeaderHeight = this.$refs.TsHeader.$el.clientHeight
       const TsSubMenuHeight = this.$refs.TsSubMenu.$el.clientHeight
-      console.log(screenHeight, screenWidth)
       this.mainSize = {
         width: `${screenWidth - 40}px`,
         height: `${screenHeight - TsHeaderHeight - TsSubMenuHeight - 40}px`
@@ -112,6 +111,7 @@ export default {
 <style lang="stylus" scoped>
 .home
   width 100%
+  background-image: linear-gradient( 44.8deg,  rgba(255,136,102,0.67) -53.1%, rgba(255,221,136,0.28) 49% );
   .el-container
     flex-direction column
   .el-menu

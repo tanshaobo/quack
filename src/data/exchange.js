@@ -12,19 +12,19 @@ const exchange = [
     id: 1,
     times: 32,
     prize: { type: '道具', name: '橙色武功扭蛋', num: 1 },
-    required: [{ type: '元宝', name: '元宝', num: 499 }]
+    required: [{ type: 'coin', id: 'yb', name: '元宝', num: 499 }]
   },
   {
-    id:2,
+    id: 2,
     times: 32,
     prize: { type: '道具', name: '橙色武功扭蛋之二', num: 1 },
-    required: [{ type: '元宝', name: '元宝', num: 499 }]
+    required: [{ type: 'coin', id: 'yb', name: '元宝', num: 499 }]
   },
   {
-    id:3,
+    id: 3,
     times: 32,
     prize: { type: '道具', name: '橙色武功扭蛋之三', num: 1 },
-    required: [{ type: '元宝', name: '元宝', num: 599 }]
+    required: [{ type: 'coin', id: 'yb', name: '元宝', num: 599 }]
   },
 
   {
@@ -32,8 +32,8 @@ const exchange = [
     times: 32,
     prize: { type: '道具', name: '橙色武功扭蛋之七', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 2 },
-      { type: '元宝', name: '元宝', num: 999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 2 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 999 }
     ]
   },
   {
@@ -41,8 +41,8 @@ const exchange = [
     times: 32,
     prize: { type: '技能', name: '真分筋错骨手', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 2 },
-      { type: '元宝', name: '元宝', num: 1999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 2 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 }
     ]
   },
   {
@@ -50,23 +50,23 @@ const exchange = [
     times: 32,
     prize: { type: '技能', name: '真铁砂掌', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 3 },
-      { type: '元宝', name: '元宝', num: 1999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 3 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 }
     ]
   },
   {
-    id: 7, 
+    id: 7,
     times: 0,
     prize: { type: '道具', name: '体力丹', num: 1 },
-    required: [{ type: '元宝', name: '元宝', num: 50 }]
+    required: [{ type: 'coin', id: 'yb', name: '元宝', num: 50 }]
   },
   {
     id: 8,
     times: 5,
     prize: { type: '道具', name: '橙色卦石玉', num: 1 },
     required: [
-      { type: '道具', name: '龙元', num: 1 },
-      { type: '元宝', name: '元宝', num: 2999 }
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 2999 }
     ]
   },
   {
@@ -74,18 +74,17 @@ const exchange = [
     times: 5,
     prize: { type: '道具', name: '橙色卦石玉之二', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 1 },
-      { type: '元宝', name: '元宝', num: 3999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 1 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 3999 }
     ]
   },
-  
   {
     id: 10,
     times: 32,
     prize: { type: '技能', name: '霸绝人间', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 3 },
-      { type: '元宝', name: '元宝', num: 2999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 3 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 2999 }
     ]
   },
   {
@@ -93,8 +92,8 @@ const exchange = [
     times: 32,
     prize: { type: '技能', name: '真霹雳拳', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 3 },
-      { type: '元宝', name: '元宝', num: 2999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 3 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 2999 }
     ]
   },
   {
@@ -102,8 +101,8 @@ const exchange = [
     times: 32,
     prize: { type: '技能', name: '绝神阵', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 3 },
-      { type: '元宝', name: '元宝', num: 2999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 3 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 2999 }
     ]
   },
   {
@@ -111,8 +110,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之二', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -120,8 +119,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之三', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -129,8 +128,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之四', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -138,8 +137,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之五', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -147,8 +146,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之六', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -156,8 +155,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之七', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -165,8 +164,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之八', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙元', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 1 }
     ]
   },
   {
@@ -174,8 +173,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之九', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙魄', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 1 }
     ]
   },
   {
@@ -183,17 +182,17 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之十', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 3666 },
-      { type: '道具', name: '龙魄', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 3666 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 1 }
     ]
   },
   {
-    id:22,
+    id: 22,
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之十一', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 4666 },
-      { type: '道具', name: '龙魄', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 4666 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 1 }
     ]
   },
   {
@@ -201,8 +200,8 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之十二', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 4666 },
-      { type: '道具', name: '龙魄', num: 1 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 4666 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 1 }
     ]
   },
   {
@@ -210,17 +209,17 @@ const exchange = [
     times: 9,
     prize: { type: '道具', name: '橙色弟子卡包之十三', num: 1 },
     required: [
-      { type: '元宝', name: '元宝', num: 5666 },
-      { type: '道具', name: '龙魄', num: 2 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 5666 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 2 }
     ]
   },
   {
-    id:25,
+    id: 25,
     times: 20,
     prize: { type: '道具', name: '培元丹', num: 10 },
     required: [
-      { type: '元宝', name: '元宝', num: 1999 },
-      { type: '道具', name: '龙元', num: 2 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 2 }
     ]
   },
   {
@@ -228,17 +227,17 @@ const exchange = [
     times: 20,
     prize: { type: '道具', name: '融灵丹', num: 10 },
     required: [
-      { type: '元宝', name: '元宝', num: 1999 },
-      { type: '道具', name: '龙元', num: 2 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 2 }
     ]
   },
-   {
+  {
     id: 27,
     times: 20,
     prize: { type: '道具', name: '进化丹', num: 10 },
     required: [
-      { type: '元宝', name: '元宝', num: 1999 },
-      { type: '道具', name: '龙元', num: 2 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 2 }
     ]
   },
   {
@@ -246,9 +245,9 @@ const exchange = [
     times: 2,
     prize: { type: '道具', name: '橙色装备袋之十四', num: 5 },
     required: [
-      { type: '元宝', name: '元宝', num: 9999 },
-      { type: '道具', name: '龙元', num: 3 },
-      { type: '道具', name: '龙魄', num: 3 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 9999 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 3 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 3 }
     ]
   },
   {
@@ -256,28 +255,27 @@ const exchange = [
     times: 2,
     prize: { type: '道具', name: '橙色装备袋之十五', num: 5 },
     required: [
-      { type: '元宝', name: '元宝', num: 9999 },
-      { type: '道具', name: '龙元', num: 4 },
-      { type: '道具', name: '龙魄', num: 4 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 9999 },
+      { type: 'coin', id: 'ly', name: '龙元', num: 4 },
+      { type: 'coin', id: 'lp', name: '龙魄', num: 4 }
     ]
   },
-  
   {
     id: 30,
     times: 32,
     prize: { type: '技能', name: '真八卦游龙掌', num: 1 },
     required: [
-      { type: '道具', name: '龙魄', num: 2 },
-      { type: '元宝', name: '元宝', num: 1999 }
+      { type: 'coin', id: 'lp', name: '龙魄', num: 2 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 }
     ]
   },
-   {
-     id: 31,
+  {
+    id: 31,
     times: 10,
     prize: { type: '道具', name: '橙色武功扭蛋', num: 1 },
     required: [
       { type: '道具', name: '橙色残章', num: 3 },
-      { type: '元宝', name: '元宝', num: 299 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 299 }
     ]
   },
   {
@@ -286,7 +284,7 @@ const exchange = [
     prize: { type: '道具', name: '橙色武功扭蛋之二', num: 1 },
     required: [
       { type: '道具', name: '橙色残章', num: 3 },
-      { type: '元宝', name: '元宝', num: 299 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 299 }
     ]
   },
   {
@@ -295,7 +293,7 @@ const exchange = [
     prize: { type: '道具', name: '橙色武功扭蛋之三', num: 1 },
     required: [
       { type: '道具', name: '橙色残章', num: 3 },
-      { type: '元宝', name: '元宝', num: 399 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 399 }
     ]
   },
   {
@@ -304,16 +302,16 @@ const exchange = [
     prize: { type: '道具', name: '橙色武功扭蛋之四', num: 1 },
     required: [
       { type: '道具', name: '橙色残章', num: 4 },
-      { type: '元宝', name: '元宝', num: 399 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 399 }
     ]
   },
   {
-    id:35,
+    id: 35,
     times: 10,
     prize: { type: '道具', name: '橙色武功扭蛋之五', num: 1 },
     required: [
       { type: '道具', name: '橙色残章', num: 4 },
-      { type: '元宝', name: '元宝', num: 499 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 499 }
     ]
   },
   {
@@ -322,7 +320,7 @@ const exchange = [
     prize: { type: '道具', name: '橙色武功扭蛋之六', num: 1 },
     required: [
       { type: '道具', name: '橙色残章', num: 4 },
-      { type: '元宝', name: '元宝', num: 599 }
+      { type: 'coin', id: 'yb', name: '元宝', num: 599 }
     ]
   }
 ]
