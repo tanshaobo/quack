@@ -21,16 +21,27 @@
               </span>
             </div>
             <div class="form-box">
-              <el-input v-model="item.currentNum" size="small">
+              <el-input
+                v-model="item.currentNum"
+                size="small"
+                @input="changeNum(index, 'input', $event)"
+              >
                 <el-button
                   slot="prepend"
                   size="small"
                   type="plain"
                   @click="changeNum(index, 'minus')"
+                  @dblclick.native="changeNum(index, 'minus', 0)"
                 >
                   -
                 </el-button>
-                <el-button slot="append" size="small" type="plain" @click="changeNum(index, 'sum')">
+                <el-button
+                  slot="append"
+                  size="small"
+                  type="plain"
+                  @click="changeNum(index, 'sum')"
+                  @dblclick.native="changeNum(index, 'sum', item.times)"
+                >
                   +
                 </el-button>
               </el-input>
@@ -83,35 +94,53 @@ export default {
       })
     },
     // 获取每项变更
-    changeNum(index, key) {
+    changeNum(index, key, number) {
       switch (key) {
         case 'sum':
-          if (this.dataList[index].currentNum == this.dataList[index].times) {
+          if (this.dataList[index].currentNum == this.dataList[index].times || number) {
             this.dataList[index].currentNum = this.dataList[index].times
           } else {
             this.dataList[index].currentNum += 1
           }
           break
         case 'minus':
-          if (this.dataList[index].currentNum == 0) {
+          if (this.dataList[index].currentNum == 0 || number != undefined) {
             this.dataList[index].currentNum = 0
           } else {
             this.dataList[index].currentNum -= 1
           }
           break
         default:
+          if (Number(number) > this.dataList[index].times) {
+            this.dataList[index].currentNum = this.dataList[index].times
+          } else if (Number(number) < 0) {
+            this.dataList[index].currentNum = 0
+          } else {
+            this.dataList[index].currentNum = Number(number)
+          }
           break
       }
+      this.getSingleSum(index)
+      this.getAllSum()
+    },
+    // 计算单项花费
+    getSingleSum(index) {
       for (let i in this.dataList[index].coin) {
         this.dataList[index].coin[i].sum =
           this.dataList[index].coin[i].num * this.dataList[index].currentNum
       }
+    },
+    // 计算总花费
+    getAllSum() {
       for (let key in this.sum) {
         this.sum[key].num = this.dataList.reduce(
           (i, item) => (item.coin[key] ? i + item.coin[key].sum : i),
           0
         )
       }
+    },
+    change(v, s) {
+      console.log(v, s)
     }
   }
 }
@@ -126,9 +155,13 @@ export default {
       flex-wrap wrap
       justify-content space-around
       .el-card
-        min-width 160px
+        min-width 140px
         margin 10px
         background-image: radial-gradient( circle 879px at 10.4% 22.3%,  rgba(255,235,238,1) 0%, rgba(186,190,245,1) 93.6% );
+        >>> .el-card__header
+          padding 10px
+        >>> .el-card__body
+          padding 10px
         .card__main
           .card__item
             display flex
