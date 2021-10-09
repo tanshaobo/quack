@@ -1,28 +1,33 @@
 const MainMenuConfig = [
   {
-    title: '卦石',
+    meta: '活动',
+    path: '/Active',
+    name: 'Native'
+  },
+  {
+    meta: '卦石',
     path: '/Nature',
     name: 'Nature'
   },
   {
-    title: '花费',
+    meta: '花费',
     path: '/Speed',
     name: 'Speed'
   }
 ]
 const NatureConfig = [
   {
-    title: '类别',
+    meta: '类别',
     isDisabled: false,
     name: 'Class'
   },
   {
-    title: '属性',
+    meta: '属性',
     isDisabled: false,
     name: 'Attr'
   },
   {
-    title: '计算',
+    meta: '计算',
     isDisabled: false,
     name: 'Computed'
   }
@@ -30,7 +35,7 @@ const NatureConfig = [
 
 const SpendConfig = [
   {
-    title: '花费',
+    meta: '花费',
     isDisabled: false,
     name: 'Speed'
   }

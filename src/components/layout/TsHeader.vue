@@ -1,9 +1,9 @@
 <template>
   <section class="ts-header">
     <section class="ts-header__menu">
-      <el-menu :default-active="activeIndex" mode="horizontal" router @select="toggleMenu">
+      <el-menu :default-active="activeIndex" mode="horizontal" @select="toggleMenu">
         <el-menu-item v-for="(item, index) in menuData" :key="index" :index="item.path">
-          {{ item.title }}
+          {{ item.meta }}
         </el-menu-item>
       </el-menu>
     </section>

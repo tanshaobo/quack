@@ -3,6 +3,12 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
+//获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 export const routes = [
   {
     path: '/',
@@ -10,13 +16,15 @@ export const routes = [
     redirect: '/Active',
     children: [
       {
-        path:'/Active',
+        path: '/Active',
         meta: '活动',
         component: () => import('../views/active/index.vue')
       },
       {
         path: '/Nature',
         meta: '卦石',
+        component: () => import('../views/nature/nature.vue')
+        // redirect: '/Nature/Class',
         // children: [
         //   {
         //     path: '/Nature/Class',

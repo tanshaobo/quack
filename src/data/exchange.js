@@ -6,18 +6,30 @@
  * @describe            ：兑换列表
  * @Example             : mock模拟数据请求
  * @instance            : id命名规则
- *                          第一位：a: 活动 s: 商城;
- *                          第二位：1: 元宝 2: 元宝+龙元 3: 元宝+龙魄 4: 元宝+龙元+龙魄
- *                          第三位：c: 货币 g: 卦石 d: 丹药 w: 武功 k: 卡包 z: 装备
- *                          第四位: 数字: 对应所属序列(十六进制)
+ *                          第一位：商品位置 a: 活动 s: 商城;
+ *                          第二位：商品货币 1: 元宝 2: 元宝+龙元 3: 元宝+龙魄 4: 元宝+龙元+龙魄
+ *                          第三位：商品分类 c: 货币 g: 卦石 d: 丹药 w: 武功 k: 卡包 z: 装备
+ *                          第四位: 商品序列 数字: 对应所属序列(十六进制)
  */
 
 const exchange = [
   {
-    id: 'a1c3',
+    id: 's1c1',
+    times: 10,
+    prize: { type: '道具', name: '龙元', num: 1 },
+    required: [
+      { type: 'coin', id: 'ly', name: '龙元', num: -1 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 }
+    ]
+  },
+  {
+    id: 'a1c2',
     times: 3,
     prize: { type: '道具', name: '龙魄', num: 1 },
-    required: [{ type: 'coin', id: 'yb', name: '元宝', num: 1999 }]
+    required: [
+      { type: 'coin', id: 'lp', name: '龙魄', num: -1 },
+      { type: 'coin', id: 'yb', name: '元宝', num: 1999 }
+    ]
   },
   {
     id: 'a2g1',

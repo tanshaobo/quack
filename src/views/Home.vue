@@ -5,7 +5,7 @@
       <TsSubMenu :submenuData="submenuData" ref="TsSubMenu" />
       <el-main>
         <el-scrollbar :style="mainSize">
-          <router-view key="Attr" />
+          <router-view></router-view>
         </el-scrollbar>
       </el-main>
     </el-container>
@@ -52,24 +52,18 @@ export default {
       }
     })
   },
-  // beforeRouteEnter(to, from, next) {
-  //   next(vm => {
-  //     // vm.setSubMenu(to)
-  //   })
-  // },
-  beforeRouteUpdate(to) {
-    console.dir(to, 'beforeRouteUpdate')
-    // this.setSubMenu(to)
-  },
   methods: {
     // 初始化
     init() {
       this.menuList = routes.filter(i => i.path != '/')
     },
     // 获取一级菜单
-    getMenuRouter(k) {
-      console.log(k)
-      this.activeIndex = k
+    getMenuRouter(path) {
+      console.log(path)
+      this.activeIndex = path
+      this.$router.push({
+        path
+      })
     },
     // 激活二级菜单
     toggleSubMenu(item) {
