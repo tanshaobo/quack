@@ -1,3 +1,11 @@
+<!--
+ * @Author: tanshaobo
+ * @Date: 2023-08-16 16:13:49
+ * @LastEditors: tanshaobo
+ * @LastEditTime: 2023-08-16 16:22:54
+ * @Description: file content
+ * @FilePath: \spark-readerd:\workspace\self\quack\src\views\spend\spend.vue
+-->
 <template>
   <div class="Spend">
     <el-container>
@@ -56,7 +64,7 @@ export default {
   },
   methods: {
     handleChange(v) {
-      console.log(v)
+      console.log(v,1)
     },
     addToCart() {}
   }
